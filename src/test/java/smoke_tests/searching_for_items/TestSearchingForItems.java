@@ -1,4 +1,4 @@
-package smoke_tests.searchingForItems;
+package smoke_tests.searching_for_items;
 
 import application.page_library.HomePage;
 import application.page_library.SearchResultsPage;
@@ -6,7 +6,7 @@ import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestSearching extends BasePage {
+public class TestSearchingForItems extends BasePage {
 
     @Test
     public void testSearching() {
