@@ -10,12 +10,19 @@ public class ShoppingCartPage extends BasePage {
     @FindBy (xpath = "//div[@class='breadcrumb clearfix']//span[2]")
     public WebElement shoppingCartText;
 
+    @FindBy (id = "summary_products_quantity")
+    public WebElement quantity;
+
     public ShoppingCartPage() {
         PageFactory.initElements(driver, this);
 
     }
 
-    public String getshoppingCartText() {
-        return getTrimmedElementText(shoppingCartText);
+    public String getShoppingCartText() {
+        return shoppingCartText.getText();
+    }
+
+    public String getQuantity() {
+        return quantity.getText();
     }
 }

@@ -19,12 +19,18 @@ public class SearchResultsPage extends BasePage {
     @FindBy (xpath = "//div[@id='layer_cart']//a[@title='Proceed to checkout']")
     public WebElement checkoutButton;
 
+    @FindBy (id = "color_2")
+    public WebElement itemColor;
+
+    @FindBy (xpath = "//div[@class='button-container']//a[@itemprop='url']")
+    public WebElement moreInfoButton;
+
     public SearchResultsPage() {
         PageFactory.initElements(driver, this);
     }
 
     public String getSearchText() {
-        return getTrimmedElementText(searchText);
+        return searchText.getText();
     }
 
     public void hoverOverItem() {
@@ -44,5 +50,30 @@ public class SearchResultsPage extends BasePage {
 
         return new ShoppingCartPage();
     }
+
+    public void chooseColor() {
+        clickOnElement(itemColor);
+    }
+
+    public ProductPage modifyColor() {
+        hoverOverItem();
+        chooseColor();
+
+        return new ProductPage();
+    }
+
+    public ProductPage clickMoreInfoButton() {
+        clickOnElement(moreInfoButton);
+
+        return new ProductPage();
+    }
+
+    public ProductPage getMoreInfo() {
+        hoverOverItem();
+        clickMoreInfoButton();
+
+        return new ProductPage();
+    }
+
 
 }
