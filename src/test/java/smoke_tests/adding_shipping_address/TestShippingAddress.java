@@ -1,4 +1,4 @@
-package smoke_tests.addingShippingAddress;
+package smoke_tests.adding_shipping_address;
 
 import application.page_library.*;
 import base.BasePage;
