@@ -10,11 +10,18 @@ public class MyAccountPage extends BasePage {
     @FindBy (className = "logout")
     public WebElement signOutButton;
 
+    @FindBy (xpath = "//div[@id='center_column']//a[@title='Addresses']")
+    public WebElement myAddressesButton;
+
     public MyAccountPage() {
         PageFactory.initElements(driver, this);
     }
 
     public String getSignOutButtonText() {
         return signOutButton.getText();
+    }
+
+    public void clickOnMyAddresses() {
+        clickOnElement(myAddressesButton);
     }
 }

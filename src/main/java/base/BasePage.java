@@ -23,7 +23,6 @@ import reporting.ExtentManager;
 import reporting.ExtentTestManager;
 
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
 import java.util.*;
@@ -213,6 +212,10 @@ public class BasePage {
     // region JavaScriptExecutor Methods
     public void jsClickOnElement(WebElement element) {
         jsDriver.executeScript("arguments[0].click();", element);
+    }
+
+    public void jsScrollDownUntilElementIsVisible(WebElement element) {
+        jsDriver.executeScript("arguments[0].scrollIntoView();", element);
     }
 
     public void safeClickOnElement(WebElement element) {
